@@ -28,5 +28,7 @@
     </div>
     </nav>
     @yield('content')
+
+    <script src="{{url('assets/bootstrap/js/pacienteJS.js')}}"></script>
 </body>
 </html>

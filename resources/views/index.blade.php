@@ -13,11 +13,8 @@
             <button class="btn btn-success">Cadastrar</button>
         </a>
     </div>
-
-    <div class="container-fluid">
-
-    </div>
     <div class="col-10 m-auto">
+        @csrf
         <table class="table text-center">
         <thead class="thead-dark">
             <tr>
@@ -54,10 +51,10 @@
                     <a href="{{url('pacientes/'.$pacientes->id)}}">
                         <button class="btn btn-dark mr-1">Visualizar</button>
                     </a>
-                    <a href="">
+                    <a href="{{url('pacientes/'.$pacientes->id.'/edit')}}">
                         <button class="btn btn-primary mr-1">Editar</button>
                     </a>
-                    <a href="">
+                    <a href="{{url('pacientes/'.$pacientes->id)}}" class="js-pacienteDelete">
                         <button class="btn btn-danger">Deletar</button>
                     </a>
                 </td>

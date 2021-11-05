@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\PacienteRequest;
 use App\Models\ModelPaciente;
 use App\Models\User;
 
@@ -45,7 +45,7 @@ class PacienteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PacienteRequest $request)
     {
         $cad = $this->objPaciente->create([
             'nome_paciente'=>$request->nome_paciente,
@@ -84,7 +84,9 @@ class PacienteController extends Controller
      */
     public function edit($id)
     {
-        //
+        $paciente = $this->objPaciente->find($id);
+        $users = $this->objUser->all();
+        return view('create',compact('paciente','users'));
     }
 
     /**
@@ -94,9 +96,21 @@ class PacienteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PacienteRequest $request, $id)
     {
-        //
+        $this->objPaciente->where(['id'=>$id])->update([
+            'nome_paciente'=>$request->nome_paciente,
+            'rua_paciente'=>$request->rua_paciente,
+            'numero_paciente'=>$request->numero_paciente,
+            'complemento_paciente'=>$request->complemento_paciente,
+            'bairro_paciente'=>$request->bairro_paciente,
+            'cep_paciente'=>$request->cep_paciente,
+            'email_paciente'=>$request->email_paciente,
+            'telefone_paciente'=>$request->telefone_paciente,
+            'id_user'=>$request->id_user
+        ]);
+
+        return redirect('pacientes');
     }
 
     /**
@@ -107,6 +121,8 @@ class PacienteController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $delPaciente = $this->objPaciente->destroy($id);
+
+        return ($delPaciente) ? "Sim": "Não";
     }
 }
