@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\ProcedimentoRequest;
 use App\Models\ModelProcedimento;
 use App\Models\User;
 
@@ -46,7 +46,7 @@ class ProcedimentoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProcedimentoRequest $request)
     {
         $cad = $this->objProcedimento->create([
             'codigo_procedimento'=>$request->codigo_procedimento,
@@ -94,7 +94,7 @@ class ProcedimentoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProcedimentoRequest $request, $id)
     {
         $this->objProcedimento->where(['id'=>$id])->update([
             'codigo_procedimento'=>$request->codigo_procedimento,

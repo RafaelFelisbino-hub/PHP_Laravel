@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// Route::resource('/', 'App\Http\Controllers\PacienteController');
+Route::resource('/', 'App\Http\Controllers\PacienteController');
 Route::resource('/pacientes', 'App\Http\Controllers\PacienteController');
 Route::resource('/medicos', 'App\Http\Controllers\MedicoController');
 Route::resource('/procedimentos', 'App\Http\Controllers\ProcedimentoController');
