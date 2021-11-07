@@ -16,13 +16,13 @@
     <div class="collapse navbar-collapse d-flex justify-content-around" id="navbarNav">
         <ul class="navbar-nav">
         <li class="nav-item">
-            <a class="nav-link text-dark" href="#">Pacientes <span class="sr-only">(current)</span></a>
+            <a class="nav-link text-dark" href="{{url('pacientes')}}">Pacientes <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-dark" href="#">Médicos</a>
+            <a class="nav-link text-dark" href="{{url('medicos')}}">Médicos</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-dark" href="#">Procedimentos</a>
+            <a class="nav-link text-dark" href="{{url('procedimentos')}}">Procedimentos</a>
         </li>
         </ul>
     </div>
@@ -30,5 +30,7 @@
     @yield('content')
 
     <script src="{{url('assets/bootstrap/js/pacienteJS.js')}}"></script>
+    <script src="{{url('assets/bootstrap/js/medicoJS.js')}}"></script>
+    <script src="{{url('assets/bootstrap/js/procedimentoJS.js')}}"></script>
 </body>
 </html>
