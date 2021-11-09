@@ -25,11 +25,11 @@ class PacienteRequest extends FormRequest
     {
         return [
             'nome_paciente'=>'regex:/^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/',
-            'rua_paciente'=>'regex:/^[a-zA-Z0-9_ ]*$/',
+            'rua_paciente'=>'string',
             'numero_paciente'=>'numeric',
             'complemento_paciente'=>'nullable',
             'bairro_paciente'=>'string',
-            'cep_paciente'=>'numeric',
+            'cep_paciente'=>'regex:/^\d{5}-\d{3}$/',
             'email_paciente'=>'email:rfc,dns',
             'telefone_paciente'=>'numeric'
         ];

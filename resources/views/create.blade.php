@@ -30,7 +30,7 @@
             <input class="form-control mb-2" type="number" name="numero_paciente" id="numero_paciente" placeholder="Número" value="{{$paciente->numero_paciente ?? ''}}" required>
             <input class="form-control mb-2" type="text" name="complemento_paciente" id="complemento_paciente" placeholder="Complemento" value="{{$paciente->complemento_paciente ?? ''}}">
             <input class="form-control mb-2" type="text" name="bairro_paciente" id="bairro_paciente" placeholder="Bairro" value="{{$paciente->bairro_paciente ?? ''}}" required>
-            <input class="form-control mb-2" type="number" name="cep_paciente" id="cep_paciente" placeholder="CEP" value="{{$paciente->cep_paciente ?? ''}}" required>
+            <input class="form-control mb-2" type="text" name="cep_paciente" id="cep_paciente" placeholder="CEP: 00000-000" value="{{$paciente->cep_paciente ?? ''}}" required>
             <input class="form-control mb-2" type="email" name="email_paciente" id="email_paciente" placeholder="Email" value="{{$paciente->email_paciente ?? ''}}" required>
             <input class="form-control mb-2" type="number" name="telefone_paciente" id="telefone_paciente" placeholder="Telefone" value="{{$paciente->telefone_paciente ?? ''}}" required>
             <select class="form-control mb-2" name="id_user" id="id_user">

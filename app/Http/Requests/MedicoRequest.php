@@ -25,11 +25,11 @@ class MedicoRequest extends FormRequest
     {
         return [
             'nome_medico'=>'regex:/^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/',
-            'rua_medico'=>'regex:/^[a-zA-Z0-9_ ]*$/',
+            'rua_medico'=>'string',
             'numero_medico'=>'numeric',
             'complemento_medico'=>'nullable',
             'bairro_medico'=>'string',
-            'cep_medico'=>'numeric',
+            'cep_medico'=>'regex:/^\d{5}-\d{3}$/',
             'email_medico'=>'email:rfc,dns',
             'telefone_medico'=>'numeric'
         ];
