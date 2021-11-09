@@ -26,7 +26,7 @@ class ProcedimentoRequest extends FormRequest
         return [
             'codigo_procedimento'=>'numeric',
             'nome_procedimento'=>'string',
-            'valor_procedimento'=>'numeric',
+            'valor_procedimento'=>'regex:/^[\d,?!]+$/',
             'data_procedimento'=>'nullable',
             'excecao_procedimento'=>'string'
         ];

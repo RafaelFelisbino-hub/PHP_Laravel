@@ -27,7 +27,7 @@
             @csrf
             <input class="form-control mb-2" type="text" name="codigo_procedimento" id="codigo_procedimento" placeholder="Codigo" value="{{$procedimento->codigo_procedimento ?? ''}}" required>
             <input class="form-control mb-2" type="text" name="nome_procedimento" id="nome_procedimento" placeholder="Nome" value="{{$procedimento->nome_procedimento ?? ''}}" required>
-            <input class="form-control mb-2" type="number" step="0.01" name="valor_procedimento" id="valor_procedimento" placeholder="Valor" value="{{$procedimento->valor_procedimento ?? ''}}" required>
+            <input class="form-control mb-2" type="text" name="valor_procedimento" id="valor_procedimento" placeholder="Valor" value="{{$procedimento->valor_procedimento ?? ''}}" required>
             <input class="form-control mb-2" type="date" name="data_procedimento" id="data_procedimento" placeholder="Data" value="{{$procedimento->data_procedimento ?? ''}}">
             <input class="form-control mb-2" type="text" name="excecao_procedimento" id="excecao_procedimento" placeholder="Excecão" value="{{$procedimento->excecao_procedimento ?? ''}}" required>
             <select class="form-control mb-2" name="id_user" id="id_user">
